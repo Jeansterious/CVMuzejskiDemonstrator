@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background-position: center;
+    background-size: cover;
+    transition: 0.4s ease;
+}
+
+body::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.slider-container {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.2);
+    height: 70vh;
+    width: 70vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    opacity: 0;
+    height: 100vh;
+    width: 100vw;
+    background-position: center, center;
+    background-size: cover;
+    position: absolute;
+    top: -15vh;
+    left: -15vw;
+    transition: 0.4s ease;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.arrow {
+    color:white;
+    position: fixed;
+    background-color: transparent;
+    padding: 20px;
+    font-size: 30px;
+    border: 2px solid orange;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.left-arrow {
+    left: calc(15vw - 65px);
+}
+
+.right-arrow {
+    right: calc(15vw - 65px);
+}
+
+#right-arrow:hover, .left-arrow:hover {
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}
+
+#left-arrow:hover, .right-arrow:hover {
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}
+
+/* new buttons css code */
+.top-buttons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    z-index: 100;
+}
+
+.top-buttons button {
+    padding: 10px 20px;
+    font-size: 20px;
+    border: 2px solid orange;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+.top-buttons button:hover {
+    background-color: orange;
+}
+
+
+/* testemonials css code for new wraper class */
+.testimonials-wrapper {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.testimonials-wrapper.hidden {
+    display: none;
+}
+
+.close-testimonials {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: 2px solid orange;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.close-testimonials:hover {
+    background-color: orange;
+}
+/* testemonials css code continued */
+.testimonial-container {
+    position: relative;
+    background-color: #476ce4;
+    color: #fff;
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 50px 80px;
+    max-width: 768px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fa-quote {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 28px;
+    position: absolute;
+    top: 70px;
+    z-index: 1;
+}
+
+.fa-quote-right {
+    left: 40px;
+}
+
+.fa-quote-left {
+    right: 40px;
+}
+
+.testimonial {
+    line-height: 28px;
+    text-align: justify;
+}
+
+.user {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.user .user-image {
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    object-fit: cover;
+}
+
+.user .user-details {
+    margin-left: 10px;
+}
+
+.user .username {
+    margin: 0;
+}
+
+.user .role {
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    background-color: #fff;
+    height: 5px;
+    width: 100%;
+    border-radius: 100px;
+    animation: grow 15s linear infinite; /* Adjusted to 15s for better visibility */
+    transform-origin: left;
+}
+ /* testimonial buttons container */
+.testimonial-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0px;
+
+    transform: translateY(-50%);
+    z-index: 50;
+}
+
+.testimonial-buttons button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 30px;
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.testimonial-buttons button:hover {
+    background-color: orange;
+    color: white;
+}
+
+/* styles for CV container */
+.cv-wrapper {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    overflow-y: auto;
+    padding: 40px 0;
+
+    z-index: 300;
+}
+
+.cv-wrapper.hidden {
+    display: none;
+}
+
+/* download CV button */
+.download-cv {
+    display: block;
+    margin: 20px auto 20px auto;
+    padding: 10px 20px;
+
+    font-size: 18px;
+    border: 2px solid black;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+}
+
+.download-cv:hover {
+    background-color: orange;
+}
+
+/* Close CV button */
+.close-cv {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+
+    font-size: 18px;
+    border: 2px solid black;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+}
+
+.close-cv:hover {
+    background-color: orange;
+}
+
+/* adjustment.css content below */
+.cv-container-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 10px;
+    background-image: url('../resources/CVBackgrouds/AncientRome.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    z-index: 1;
+}
+
+
+p, li {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.section,
+.contact,
+h1 {
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+
+/* ===== Profile Image ===== */
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #333;
+    margin: 0 auto 20px auto;
+    transition: all 0.3s ease;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.profile-image:hover img {
+    content: url('../resources/CVBackgrouds/JeanOld.jpg');
+}
+
+/* ===== Contact Info ===== */
+.contact {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ===== Sections ===== */
+.section {
+    margin-top: 20px;
+}
+
+/* ===== Skills ===== */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* ===== Projects ===== */
+.projects-list {
+    list-style: none;
+    padding: 0;
+}
+
+.projects-list li {
+    margin-bottom: 10px;
+}
+
+/* ===== Footer ===== */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* progress bar animation */
+@keyframes grow {
+    0% {
+        transform: scaleX(0);
+    }
+}
+
+/* media queries for testimonials */
+
+@media(max-width: 768px) {
+    .fa-quote {
+        display: none;
+    }
+    .testimonial-container {
+        padding: 20px 30px;
+    }
+}
+
+/* buttons media query */
+@media (max-width: 600px) {
+    .top-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .top-buttons button {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+/* ===== Responsive CV ===== */
+@media (max-width: 600px) {
+    .cv-container-wrapper {
+        padding: 20px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
+
+
+

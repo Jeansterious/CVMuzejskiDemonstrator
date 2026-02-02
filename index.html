@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        rel ="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous"
+    />
+    <link rel="Stylesheet" href="CSS/index.css" />
+    <title>History CV</title>
+</head>
+<body>
+    <div class="slider-container">
+
+        <div class="top-buttons">
+            <button class="open-cv">Odpri CV</button>
+            <button class="open-commentary">Komentarji</button>
+        </div>
+
+        <div class="slide active" style="background-image: url('resources/sevenWonders/Pyramids.jpeg')"></div>
+        <div class="slide" style="background-image: url('resources/sevenWonders/ColossusOfRhodes.jpeg')"></div>
+        <div class="slide" style="background-image: url('resources/sevenWonders/HalikarnasMausoleum.jpg')"></div>
+        <div class="slide" style="background-image: url('resources/sevenWonders/HangingGardensOfBabylon.jpeg')"></div>
+        <div class="slide" style="background-image: url('resources/sevenWonders/LighthouseAlexandria.jpeg')"></div>
+        <div class="slide" style="background-image: url('resources/sevenWonders/TempleOfArtemis.jpeg')"></div>
+        <div class="slide" style="background-image: url('resources/sevenWonders/TempleOfZeus.jpg')"></div>
+
+        <button class="arrow left-arrow" id="left">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+
+        <button class="arrow right-arrow" id="right">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+
+        <!--slider container-->
+        <div class="cv-wrapper hidden">
+            <div class="cv-container-wrapper">
+                <!-- download pdf button -->
+                <button class="download-cv">Prenesi CV (PDF)</button>
+
+                <!-- CLOSE BUTTON -->
+                <button class="close-cv">Nazaj</button>
+
+                <!-- ===== Profile Image ===== -->
+                <div class="profile-image">
+                <img src="resources/CVBackgrouds/JeanRomeFace.jpg" alt="Profile Picture">
+                </div>
+
+                <h1 style="text-align:center;">Jean Robert Tkalec</h1>
+
+                <div class="contact">
+                <p>Email: jeanrtkalec@gmail.com | Telefon: +38670239687 | Naslov: Pregljeva ulica 9, Maribor</p>
+                <p>GitHub: github.com/Jeansterious</p>
+                </div>
+                <!-- ===== Advantages ===== -->
+                <div class="section">
+                    <h2>Prednosti</h2>
+                    <ul>
+                        <li>
+                            <strong>Vrhunske socialne veščine</strong><br> - Zelo hitro vzpostavim stik z ljudmi in ustvarim sproščeno vzdušje.
+                            <br>- Dobro berem neverbalne signale in se znam prilagoditi sogovorniku.
+                        </li>
+                        <li>
+                            <strong>Timsko delo</strong><br>- Znam povezati različne poglede in jih pretvoriti v skupno rešitev.
+                            <br>- Motiviram druge in poskrbim, da se vsi počutijo vključene.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ===== Education ===== -->
+                <div class="section">
+                    <h2>Izobrazba</h2>
+                    <ul>
+                        <li><strong>Diplomiran zgodovinar</strong> - Univerza v Ljubljani</li>
+                    </ul>
+                </div>
+
+                <!-- ===== Skills ===== -->
+                <div class="section">
+                    <h2>Računalniške veščine</h2>
+                    <ul class="skills-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Java</li>
+                        <li>Microsoft Office</li>
+                        <li>Git</li>
+                        <li>SQL</li>
+                        <li>itd.</li>
+                    </ul>
+                </div>
+
+                <!-- ===== Languages ===== -->
+                <div class="section">
+                    <h2>Jeziki</h2>
+                    <ul class="projects-list">
+                        <li><strong>Nemščina:</strong> Tekoče, kot materni jezik</li>
+                        <li><strong>Angleščina:</strong> Tekoče, kot materni jezik</li>
+                        <li><strong>Srbo-hrvaščina:</strong> Razumem 80%, vendar ne govorim</li>
+                    </ul>
+                </div>
+
+                <!-- ===== Footer ===== -->
+                <footer class="section footer">
+                    © 2026 Jean Robert Tkalec
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- Testimonials overlay (Project 2) -->
+    <div class="testimonials-wrapper hidden">
+        <div class="testimonial-container">
+            <div class="progress-bar"></div>
+            <div class="fas fa-quote-right fa-quote"></div>
+            <div class="fas fa-quote-left fa-quote"></div>
+
+            <p class="testimonial"></p>
+
+            <div class="user">
+                <img src="" alt="user" class="user-image" />
+                <div class="user-details">
+                    <h4 class="username"></h4>
+                    <p class="role"></p>
+                </div>
+            </div>
+            <!-- testimonial buttons -->
+            <div class="testimonial-buttons">
+                <button class="prev-testimonial">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button class="next-testimonial">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <button class="close-testimonials">Nazaj</button>
+        </div>
+    </div>
+    <!-- pdf script and JS script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="JS/index.js"></script>
+</body>
+</html>
